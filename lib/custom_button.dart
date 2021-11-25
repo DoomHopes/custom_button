@@ -4,12 +4,14 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Icon icon;
   final Color color;
+  final Function onTap;
 
   const CustomButton({
     Key? key,
     required this.text,
     required this.icon,
     required this.color,
+    required this.onTap,
   }) : super(key: key);
 
   Color darken(Color c, [int percent = 30]) {
@@ -31,71 +33,76 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 260,
-      height: 85,
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            right: 1,
-            top: 18,
-            child: Container(
-              height: 50,
-              width: 200,
-              child: Center(
-                child: Text(
-                  text,
-                  style: const TextStyle(fontSize: 25),
+    return GestureDetector(
+      onTap: () {
+        onTap();
+      },
+      child: SizedBox(
+        width: 260,
+        height: 85,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              right: 1,
+              top: 18,
+              child: Container(
+                height: 50,
+                width: 200,
+                child: Center(
+                  child: Text(
+                    text,
+                    style: const TextStyle(fontSize: 25),
+                  ),
                 ),
-              ),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    brighten(color),
-                    darken(color),
-                  ],
-                ),
-                borderRadius:
-                    const BorderRadius.only(topRight: Radius.circular(90)),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 9,
-            left: 15,
-            child: Container(
-              height: 66,
-              width: 66,
-              child: icon,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: brighten(color)),
-                color: darken(color),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 5,
-            child: Container(
-              height: 85,
-              width: 85,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.grey),
-                gradient: const LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  tileMode: TileMode.mirror,
-                  colors: [
-                    Colors.white,
-                    Colors.transparent,
-                    Colors.white,
-                  ],
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      brighten(color),
+                      darken(color),
+                    ],
+                  ),
+                  borderRadius:
+                      const BorderRadius.only(topRight: Radius.circular(90)),
                 ),
               ),
             ),
-          ),
-        ],
+            Positioned(
+              top: 9,
+              left: 15,
+              child: Container(
+                height: 66,
+                width: 66,
+                child: icon,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: brighten(color)),
+                  color: darken(color),
+                ),
+              ),
+            ),
+            Positioned(
+              left: 5,
+              child: Container(
+                height: 85,
+                width: 85,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.grey),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    tileMode: TileMode.mirror,
+                    colors: [
+                      Colors.white,
+                      Colors.transparent,
+                      Colors.white,
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -6,8 +6,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String text = 'Text';
 
   @override
   Widget build(BuildContext context) {
@@ -22,27 +29,51 @@ class MyApp extends StatelessWidget {
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
+                Text(
+                  text,
+                  style: const TextStyle(
+                    fontSize: 25,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
                 CustomButton(
                   text: 'Upload',
-                  icon: Icon(Icons.upload_file),
+                  icon: const Icon(Icons.upload_file),
                   color: Colors.blue,
+                  onTap: () {
+                    setState(() {
+                      text = 'Upload';
+                    });
+                  },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomButton(
                   text: 'Search',
-                  icon: Icon(Icons.search),
+                  icon: const Icon(Icons.search),
                   color: Colors.purple,
+                  onTap: () {
+                    setState(() {
+                      text = 'Search';
+                    });
+                  },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomButton(
                   text: 'Settings',
-                  icon: Icon(Icons.settings),
+                  icon: const Icon(Icons.settings),
                   color: Colors.green,
+                  onTap: () {
+                    setState(() {
+                      text = 'Settings';
+                    });
+                  },
                 ),
               ],
             ),
