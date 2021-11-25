@@ -12,11 +12,14 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 280,
-      height: 80,
-      child: Container(
-        color: Colors.black,
+    return Container(
+      width: 260,
+      height: 85,
+      color: Colors.black,
+      child: InkWell(
+        onTap: () {
+          // todo
+        },
         child: Stack(
           children: <Widget>[
             Positioned(
@@ -44,28 +47,28 @@ class CustomButton extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 17,
-              left: 53,
+              left: 5,
               child: Container(
-                height: 55,
-                width: 55,
-                child: icon,
+                height: 85,
+                width: 85,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.green[900],
+                  color: Colors.transparent,
+                  border: Border.all(color: Colors.red),
                 ),
               ),
             ),
             Positioned(
               top: 9,
-              left: 45,
+              left: 15,
               child: Container(
-                height: 70,
-                width: 70,
+                height: 66,
+                width: 66,
+                child: icon,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  border: Border.all(color: Colors.white),
+                  border: Border.all(color: Colors.green),
+                  color: Colors.green[900],
                 ),
               ),
             ),
