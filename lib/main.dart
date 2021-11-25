@@ -20,7 +20,10 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: const Center(
-          child: CustomButton(),
+          child: CustomButton(
+            text: 'Upload',
+            icon: Icon(Icons.upload_file),
+          ),
         ),
       ),
     );
