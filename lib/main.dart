@@ -41,7 +41,10 @@ class _MyAppState extends State<MyApp> {
                 ),
                 CustomButton(
                   text: 'Upload',
-                  icon: const Icon(Icons.upload_file),
+                  icon: const Icon(
+                    Icons.upload_file,
+                    size: 40,
+                  ),
                   color: Colors.blue,
                   onTap: () {
                     setState(() {
@@ -54,7 +57,10 @@ class _MyAppState extends State<MyApp> {
                 ),
                 CustomButton(
                   text: 'Search',
-                  icon: const Icon(Icons.search),
+                  icon: const Icon(
+                    Icons.search,
+                    size: 40,
+                  ),
                   color: Colors.purple,
                   onTap: () {
                     setState(() {
@@ -67,7 +73,10 @@ class _MyAppState extends State<MyApp> {
                 ),
                 CustomButton(
                   text: 'Settings',
-                  icon: const Icon(Icons.settings),
+                  icon: const Icon(
+                    Icons.settings,
+                    size: 40,
+                  ),
                   color: Colors.green,
                   onTap: () {
                     setState(() {

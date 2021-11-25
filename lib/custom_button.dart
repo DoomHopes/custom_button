@@ -4,7 +4,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Icon icon;
   final Color color;
-  final Function onTap;
+  final Function() onTap;
 
   const CustomButton({
     Key? key,
@@ -34,9 +34,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        onTap();
-      },
+      onTap: onTap,
       child: SizedBox(
         width: 260,
         height: 85,
