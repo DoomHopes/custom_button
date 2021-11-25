@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_button.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Custom Button',
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: const Center(
-          child: Text('Bite my shiny metal ass'),
+          child: CustomButton(),
         ),
       ),
     );
