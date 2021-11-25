@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
           child: CustomButton(
             text: 'Upload',
             icon: Icon(Icons.upload_file),
+            color: Colors.red,
           ),
         ),
       ),
